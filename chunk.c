@@ -21,3 +21,9 @@ void writeChunk(Chunk* chunk, uint8_t byte) {
   chunk->code[chunk->count] = byte;
   chunk->count++;
 }
+
+// Deallocate all memory and call init to zero out fields
+void freeChunk(Chunk* chunk){
+  FREE_ARRAY(uint8_t, chunk->code, chunk->capacity);
+  initChunk(chunk);
+}

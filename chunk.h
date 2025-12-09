@@ -21,7 +21,11 @@ typedef struct {
 
 // Initialize a new chunk
 void initChunk(Chunk* chunk);
+
+// Add bytes to chunk
 void writeCHunk(Chunk* chunk, uint8_t byte);
 
+// Free memory from chunk
+void freeChunk(Chunk* chunk);
 
 #endif
