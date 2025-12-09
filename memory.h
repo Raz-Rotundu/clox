@@ -12,6 +12,10 @@
   (type*)reallocate(pointer, sizeof(type) * (oldCount), \
       sizeof(type) * (newCount))
 
+// Macro feeing memory by passing zero as the new size
+#define FREE_ARRAY(type, pointer, oldCount) \
+  reallocate(pointer, (sizeof(type), * oldCount), 0)
+
 // Function used for dynamic memory allocation in Clox(allocation, freeing, resizing existing allocation)
 void* reallocate(void* pointer, size_t oldSize, size_t newSize);
 
